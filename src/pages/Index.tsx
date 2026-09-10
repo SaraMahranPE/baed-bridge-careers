@@ -72,7 +72,7 @@ function HeroSection() {
             </Button>
           </motion.div>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }} className="mt-4 text-xs text-muted-foreground">
-            Powered by Gemini AI · Free · Takes 30 seconds
+            Powered by DeepSeek AI · Free · Takes 30 seconds
           </motion.p>
         </div>
       </div>
@@ -110,7 +110,7 @@ function AboutSection() {
   const stats = [
     { number: "6", label: "Accessible courses" },
     { number: "4", label: "Live job listings" },
-    { number: "AI", label: "Powered by Gemini" },
+    { number: "AI", label: "Powered by DeepSeek" },
     { number: "100%", label: "Remote-friendly" },
   ];
   return (
@@ -123,7 +123,7 @@ function AboutSection() {
         </motion.div>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUp} custom={0.5} className="text-center mb-12">
           <p className="text-muted-foreground max-w-3xl mx-auto text-base leading-relaxed">
-            We bridge the gap between skilled talents and inclusive employers. By leveraging Baed's deep expertise and Gemini AI technology, we don't just list jobs, we build roadmaps. We empower individuals to master Content Marketing and match them with teams where they can truly thrive.
+            We bridge the gap between skilled talents and inclusive employers. By leveraging Baed's deep expertise and DeepSeek AI technology, we don't just list jobs, we build roadmaps. We empower individuals to master Content Marketing and match them with teams where they can truly thrive.
           </p>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }} className="mt-3 text-sm text-muted-foreground/70 tracking-wide">
             Committed to 100% free accessibility for talents, powered by inclusive employers.
@@ -231,10 +231,10 @@ function CareerMatchCTASection() {
             <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center p-10 md:p-16">
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={slideLeft} custom={0}>
                 <div className="inline-flex items-center gap-2 bg-[#f9f2c2]/15 text-[#f9f2c2] px-4 py-2 rounded-full text-xs font-semibold mb-6 border border-[#f9f2c2]/20">
-                  <Sparkles className="h-3.5 w-3.5" />Powered by Gemini AI
+                  <Sparkles className="h-3.5 w-3.5" />Powered by DeepSeek AI
                 </div>
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#f9f2c2] leading-tight mb-6">Your career roadmap,{" "}<span className="text-[#fff279]">in 30 seconds.</span></h2>
-                <p className="text-[#f9f2c2]/75 text-base leading-relaxed mb-8">Tell Gemini AI about your background and accessibility needs. It instantly designs your personalized journey: from recommending the right courses to bridge your skills, to strategic resume tips and interview prep, guiding you to your perfect career match.</p>
+                <p className="text-[#f9f2c2]/75 text-base leading-relaxed mb-8">Tell DeepSeek AI about your background and accessibility needs. It instantly designs your personalized journey: from recommending the right courses to bridge your skills, to strategic resume tips and interview prep, guiding you to your perfect career match.</p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button size="lg" className="bg-[#fff279] text-[#5f1a37] hover:bg-[#fff060] font-bold shadow-lg" asChild>
                     <Link to="/career-match"><Sparkles className="mr-2 h-5 w-5" />Try Career Match AI</Link>

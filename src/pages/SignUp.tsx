@@ -79,7 +79,7 @@ const SignUp = () => {
           <div className="bg-white/10 rounded-2xl p-6 border border-white/20">
             <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-3">What you get free</p>
             {[
-              "AI Career Match powered by Gemini",
+              "AI Career Match powered by DeepSeek",
               "Access to 6 content marketing courses",
               "Job matching with inclusive employers",
               "Resume tips tailored to your profile",

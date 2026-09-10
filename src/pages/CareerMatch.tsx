@@ -121,18 +121,15 @@ You MUST respond in this exact JSON format and nothing else:
 }`;
 
     try {
-      const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${import.meta.env.VITE_GEMINI_API_KEY}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-        }
-      );
+      const response = await fetch("/api/career-match", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+      });
       const data = await response.json();
       if (!response.ok) throw new Error(`${response.status}: ${data.error?.message || "API error"}`);
       const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-      if (!text) throw new Error("No response from Gemini");
+      if (!text) throw new Error("No response from AI");
       const cleaned = text.replace(/```json|```/g, "").trim();
       setResult(JSON.parse(cleaned));
     } catch (err: any) {
@@ -180,7 +177,7 @@ You MUST respond in this exact JSON format and nothing else:
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <div className="inline-flex items-center gap-2 bg-white/15 text-white border border-white/20 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               <Sparkles className="h-4 w-4 text-[#fff279]" />
-              Powered by Gemini AI
+              Powered by DeepSeek AI
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold text-[#fff9c6] mb-6 leading-tight">
               Find Your Perfect<br />
@@ -356,7 +353,7 @@ You MUST respond in this exact JSON format and nothing else:
                         <span className="text-2xl shrink-0">⏳</span>
                         <div>
                           <p className="font-bold text-[#5f1a37] text-sm mb-1">
-                            Gemini AI is taking a short break
+                            Our AI is taking a short break
                           </p>
                           <p className="text-[#731f43] text-sm leading-relaxed">
                             We've hit the free tier limit for our AI service. This is temporary —
@@ -380,7 +377,7 @@ You MUST respond in this exact JSON format and nothing else:
                           </p>
                           <p className="text-destructive/80 text-sm leading-relaxed">
                             There's a configuration issue with the AI service. If you're a judge
-                            reviewing this project, please check that the Gemini API key is set
+                            reviewing this project, please check that the OpenRouter API key is set
                             in the environment variables.
                           </p>
                         </div>
@@ -417,7 +414,7 @@ You MUST respond in this exact JSON format and nothing else:
                       {loading ? (
                         <span className="flex items-center gap-3">
                           <Loader2 className="h-5 w-5 animate-spin" />
-                          Gemini AI is analyzing your profile...
+                          DeepSeek AI is analyzing your profile...
                         </span>
                       ) : (
                         <span className="flex items-center gap-3">
